@@ -8,9 +8,10 @@ package com.mycompany.databasemidtermreq;
  *
  * @author eronm
  */
+import javax.swing.*;
 public class DatabaseMidtermReq {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
     }
 }
