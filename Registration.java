@@ -28,6 +28,7 @@ public class Registration extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         Background = new javax.swing.JPanel();
         RigesterWindow = new javax.swing.JPanel();
         windowPane = new javax.swing.JPanel();
@@ -41,27 +42,22 @@ public class Registration extends javax.swing.JFrame {
         EmailReg = new javax.swing.JLabel();
         emailField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
+        jFormattedTextField1.setText("jFormattedTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Background.setBackground(new java.awt.Color(210, 230, 255));
+        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         RigesterWindow.setBackground(new java.awt.Color(245, 235, 220));
         RigesterWindow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        RigesterWindow.setPreferredSize(new java.awt.Dimension(400, 300));
 
         windowPane.setBackground(new java.awt.Color(110, 190, 180));
-
-        javax.swing.GroupLayout windowPaneLayout = new javax.swing.GroupLayout(windowPane);
-        windowPane.setLayout(windowPaneLayout);
-        windowPaneLayout.setHorizontalGroup(
-            windowPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 364, Short.MAX_VALUE)
-        );
-        windowPaneLayout.setVerticalGroup(
-            windowPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 12, Short.MAX_VALUE)
-        );
+        windowPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Register.setFont(new java.awt.Font("Retro Gaming", 0, 18)); // NOI18N
         Register.setText("Register");
@@ -100,40 +96,34 @@ public class Registration extends javax.swing.JFrame {
             RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(windowPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RigesterWindowLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
                 .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RigesterWindowLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                    .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(PasswordReg)
                         .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(usernameRegister)
-                            .addComponent(NameRegister))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RigesterWindowLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EmailReg)
-                            .addComponent(PasswordReg))
-                        .addGap(18, 18, 18)))
+                            .addComponent(NameRegister)))
+                    .addComponent(EmailReg))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RigesterWindowLayout.createSequentialGroup()
-                            .addComponent(Register)
-                            .addGap(129, 129, 129))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RigesterWindowLayout.createSequentialGroup()
-                            .addComponent(jButton1)
-                            .addGap(141, 141, 141)))
                     .addGroup(RigesterWindowLayout.createSequentialGroup()
-                        .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameRegField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(usernameRegField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39))))
+                        .addGap(1, 1, 1)
+                        .addComponent(Register))
+                    .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameRegField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usernameRegField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RigesterWindowLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(141, 141, 141))
         );
         RigesterWindowLayout.setVerticalGroup(
             RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RigesterWindowLayout.createSequentialGroup()
-                .addComponent(windowPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(windowPane, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -151,36 +141,20 @@ public class Registration extends javax.swing.JFrame {
                 .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EmailReg)
                     .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addGap(0, 26, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout BackgroundLayout = new javax.swing.GroupLayout(Background);
-        Background.setLayout(BackgroundLayout);
-        BackgroundLayout.setHorizontalGroup(
-            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(RigesterWindow, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        BackgroundLayout.setVerticalGroup(
-            BackgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundLayout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(RigesterWindow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
-        );
+        Background.add(RigesterWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 360, 250));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/instagram_ pinkx17 please follow me _).jpg"))); // NOI18N
+        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 270));
 
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void nameRegFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameRegFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_nameRegFieldActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -189,6 +163,10 @@ public class Registration extends javax.swing.JFrame {
     private void usernameRegFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameRegFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameRegFieldActionPerformed
+
+    private void nameRegFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameRegFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameRegFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,6 +202,8 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JPanel RigesterWindow;
     private javax.swing.JTextField emailField;
     private javax.swing.JButton jButton1;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField nameRegField;
     private javax.swing.JTextField usernameRegField;
