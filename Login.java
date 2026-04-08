@@ -28,21 +28,89 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        RigesterWindow = new javax.swing.JPanel();
+        windowPane = new javax.swing.JPanel();
+        LOGIN = new javax.swing.JLabel();
+        usernameRegister = new javax.swing.JLabel();
+        usernameRegField = new javax.swing.JTextField();
+        PasswordReg = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        LoginBut = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Background = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        RigesterWindow.setBackground(new java.awt.Color(245, 235, 220));
+        RigesterWindow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        RigesterWindow.setPreferredSize(new java.awt.Dimension(400, 300));
+        RigesterWindow.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        windowPane.setBackground(new java.awt.Color(110, 190, 180));
+        windowPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        windowPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        RigesterWindow.add(windowPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 30));
+
+        LOGIN.setFont(new java.awt.Font("Retro Gaming", 0, 18)); // NOI18N
+        LOGIN.setText("LOGIN");
+        RigesterWindow.add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+
+        usernameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
+        usernameRegister.setText("Username");
+        RigesterWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+
+        usernameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        usernameRegField.addActionListener(this::usernameRegFieldActionPerformed);
+        RigesterWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 189, 30));
+
+        PasswordReg.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
+        PasswordReg.setText("Password");
+        RigesterWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+
+        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
+        RigesterWindow.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 189, 30));
+
+        LoginBut.setBackground(new java.awt.Color(150, 220, 150));
+        LoginBut.setFont(new java.awt.Font("Retro Gaming", 1, 14)); // NOI18N
+        LoginBut.setText("LOGIN");
+        LoginBut.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        LoginBut.addActionListener(this::LoginButActionPerformed);
+        RigesterWindow.add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 110, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/retro (1).png"))); // NOI18N
+        RigesterWindow.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/key.png"))); // NOI18N
+        RigesterWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, 30));
+
+        getContentPane().add(RigesterWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 590, 360));
+
+        Background.setBackground(new java.awt.Color(210, 230, 255));
+        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/instagram_ pinkx17 please follow me _).jpg"))); // NOI18N
+        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -30, 720, 470));
+
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, 670, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void usernameRegFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameRegFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameRegFieldActionPerformed
+
+    private void LoginButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoginButActionPerformed
+
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +138,17 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Background;
+    private javax.swing.JLabel LOGIN;
+    private javax.swing.JButton LoginBut;
+    private javax.swing.JLabel PasswordReg;
+    private javax.swing.JPanel RigesterWindow;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField usernameRegField;
+    private javax.swing.JLabel usernameRegister;
+    private javax.swing.JPanel windowPane;
     // End of variables declaration//GEN-END:variables
 }
