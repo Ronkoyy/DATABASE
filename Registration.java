@@ -4,10 +4,7 @@
  */
 package com.mycompany.databasemidtermreq;
 
-/**
- *
- * @author eronm
- */
+import javax.swing.JOptionPane;
 public class Registration extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Registration.class.getName());
@@ -39,9 +36,9 @@ public class Registration extends javax.swing.JFrame {
         usernameRegister = new javax.swing.JLabel();
         usernameRegField = new javax.swing.JTextField();
         PasswordReg = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        Passwordregf = new javax.swing.JPasswordField();
         EmailReg = new javax.swing.JLabel();
-        emailField = new javax.swing.JTextField();
+        emailRegF = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -98,16 +95,16 @@ public class Registration extends javax.swing.JFrame {
         PasswordReg.setText("Password");
         RigesterWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
 
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
-        RigesterWindow.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 189, 30));
+        Passwordregf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Passwordregf.addActionListener(this::PasswordregfActionPerformed);
+        RigesterWindow.add(Passwordregf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 189, 30));
 
         EmailReg.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
         EmailReg.setText("E-mail");
         RigesterWindow.add(EmailReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 50, 20));
 
-        emailField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        RigesterWindow.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 190, 30));
+        emailRegF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        RigesterWindow.add(emailRegF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 190, 30));
 
         jButton1.setBackground(new java.awt.Color(150, 220, 150));
         jButton1.setFont(new java.awt.Font("Retro Gaming", 1, 18)); // NOI18N
@@ -158,17 +155,53 @@ public class Registration extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameRegFieldActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void PasswordregfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordregfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_PasswordregfActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-    java.sql.Connection testConn = DBConnection.connectDB();
+String name = nameRegField.getText();
+String user = usernameRegField.getText();
+String pass = String.valueOf(Passwordregf.getPassword());
+String email = emailRegF.getText();
 
-if (testConn != null) {
-    javax.swing.JOptionPane.showMessageDialog(this, "CONNECTION SUCCESSFUL! The retro app is online.");
-}        // TODO add your handling code here:
+
+if (name.isEmpty() || user.isEmpty() || pass.isEmpty() || email.isEmpty()) {
+    JOptionPane.showMessageDialog(this, "Please fill up all fields!", "Error", JOptionPane.ERROR_MESSAGE);
+    return;
+}
+
+try {
+    
+    java.sql.Connection conn = DBConnection.connectDB();
+    
+    
+    String sql = "INSERT INTO users (fullName, username, password, email) VALUES (?, ?, ?, ?)";
+    java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+    
+    pst.setString(1, name);
+    pst.setString(2, user);
+    pst.setString(3, pass);
+    pst.setString(4, email);
+    
+   
+    int updatedRows = pst.executeUpdate();
+    if (updatedRows > 0) {
+        JOptionPane.showMessageDialog(this, "Registration Successful!");
+        
+     
+        new Login().setVisible(true);
+        this.dispose();
+    }
+    
+    conn.close();
+    
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(this, "Database Error: " + e.getMessage());
+}
+    java.sql.Connection testConn = DBConnection.connectDB();
+     // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void controlwinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlwinActionPerformed
@@ -209,10 +242,11 @@ if (testConn != null) {
     private javax.swing.JLabel EmailReg;
     private javax.swing.JLabel NameRegister;
     private javax.swing.JLabel PasswordReg;
+    private javax.swing.JPasswordField Passwordregf;
     private javax.swing.JLabel Register;
     private javax.swing.JPanel RigesterWindow;
     private javax.swing.JButton controlwin;
-    private javax.swing.JTextField emailField;
+    private javax.swing.JTextField emailRegF;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JFormattedTextField jFormattedTextField1;
@@ -221,7 +255,6 @@ if (testConn != null) {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField nameRegField;
     private javax.swing.JTextField usernameRegField;
     private javax.swing.JLabel usernameRegister;
