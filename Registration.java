@@ -39,8 +39,8 @@ public class Registration extends javax.swing.JFrame {
         Passwordregf = new javax.swing.JPasswordField();
         EmailReg = new javax.swing.JLabel();
         emailRegF = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        RegisterBut = new javax.swing.JButton();
+        existingUser = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -79,6 +79,7 @@ public class Registration extends javax.swing.JFrame {
         NameRegister.setText("Name");
         RigesterWindow.add(NameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
+        nameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
         nameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         nameRegField.addActionListener(this::nameRegFieldActionPerformed);
         RigesterWindow.add(nameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 189, 30));
@@ -87,6 +88,7 @@ public class Registration extends javax.swing.JFrame {
         usernameRegister.setText("Username");
         RigesterWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
+        usernameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
         usernameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usernameRegField.addActionListener(this::usernameRegFieldActionPerformed);
         RigesterWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 189, 30));
@@ -95,6 +97,7 @@ public class Registration extends javax.swing.JFrame {
         PasswordReg.setText("Password");
         RigesterWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
 
+        Passwordregf.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
         Passwordregf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Passwordregf.addActionListener(this::PasswordregfActionPerformed);
         RigesterWindow.add(Passwordregf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 189, 30));
@@ -103,22 +106,23 @@ public class Registration extends javax.swing.JFrame {
         EmailReg.setText("E-mail");
         RigesterWindow.add(EmailReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 50, 20));
 
+        emailRegF.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
         emailRegF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         RigesterWindow.add(emailRegF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 190, 30));
 
-        jButton1.setBackground(new java.awt.Color(150, 220, 150));
-        jButton1.setFont(new java.awt.Font("Retro Gaming", 1, 18)); // NOI18N
-        jButton1.setText("Register");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(this::jButton1ActionPerformed);
-        RigesterWindow.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 120, 40));
+        RegisterBut.setBackground(new java.awt.Color(150, 220, 150));
+        RegisterBut.setFont(new java.awt.Font("Retro Gaming", 1, 18)); // NOI18N
+        RegisterBut.setText("Register");
+        RegisterBut.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        RegisterBut.addActionListener(this::RegisterButActionPerformed);
+        RigesterWindow.add(RegisterBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 120, 40));
 
-        jButton2.setBackground(new java.awt.Color(245, 235, 220));
-        jButton2.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
-        jButton2.setText("Already have an account?");
-        jButton2.setBorder(null);
-        jButton2.addActionListener(this::jButton2ActionPerformed);
-        RigesterWindow.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 150, -1));
+        existingUser.setBackground(new java.awt.Color(245, 235, 220));
+        existingUser.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        existingUser.setText("Already have an account?");
+        existingUser.setBorder(null);
+        existingUser.addActionListener(this::existingUserActionPerformed);
+        RigesterWindow.add(existingUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 150, -1));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/envelope (1).png"))); // NOI18N
@@ -159,7 +163,7 @@ public class Registration extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PasswordregfActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RegisterButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButActionPerformed
 
 String name = nameRegField.getText();
 String user = usernameRegField.getText();
@@ -202,15 +206,17 @@ try {
 }
     java.sql.Connection testConn = DBConnection.connectDB();
      // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RegisterButActionPerformed
 
     private void controlwinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlwinActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_controlwinActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void existingUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_existingUserActionPerformed
+      Login LoginWindow = new Login();
+      LoginWindow.setVisible(true);
+      this.dispose();
+    }//GEN-LAST:event_existingUserActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,11 +250,11 @@ try {
     private javax.swing.JLabel PasswordReg;
     private javax.swing.JPasswordField Passwordregf;
     private javax.swing.JLabel Register;
+    private javax.swing.JButton RegisterBut;
     private javax.swing.JPanel RigesterWindow;
     private javax.swing.JButton controlwin;
     private javax.swing.JTextField emailRegF;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton existingUser;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
