@@ -37,9 +37,8 @@ public class Login extends javax.swing.JFrame {
         PasswordReg = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         LoginBut = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         Background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -91,12 +90,6 @@ public class Login extends javax.swing.JFrame {
         LoginBut.addActionListener(this::LoginButActionPerformed);
         LoginWindow.add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 120, 40));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/retro (1).png"))); // NOI18N
-        LoginWindow.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, 30));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/key.png"))); // NOI18N
-        LoginWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, 30));
-
         jButton1.setBackground(new java.awt.Color(245, 235, 220));
         jButton1.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
         jButton1.setText("Don't have an account?");
@@ -104,12 +97,14 @@ public class Login extends javax.swing.JFrame {
         jButton1.addActionListener(this::jButton1ActionPerformed);
         LoginWindow.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 150, -1));
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/retro.png"))); // NOI18N
+        LoginWindow.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 120, -1, -1));
+
         getContentPane().add(LoginWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 590, 370));
 
         Background.setBackground(new java.awt.Color(210, 230, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/instagram_ pinkx17 please follow me _).jpg"))); // NOI18N
         Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -30, 720, 470));
 
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, 670, 440));
@@ -171,8 +166,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton controlwin;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField usernameRegField;
     private javax.swing.JLabel usernameRegister;
