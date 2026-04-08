@@ -17,6 +17,7 @@ public class Registration extends javax.swing.JFrame {
      */
     public Registration() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,7 +30,6 @@ public class Registration extends javax.swing.JFrame {
     private void initComponents() {
 
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        Background = new javax.swing.JPanel();
         RigesterWindow = new javax.swing.JPanel();
         windowPane = new javax.swing.JPanel();
         Register = new javax.swing.JLabel();
@@ -42,6 +42,11 @@ public class Registration extends javax.swing.JFrame {
         EmailReg = new javax.swing.JLabel();
         emailField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         jFormattedTextField1.setText("jFormattedTextField1");
@@ -49,124 +54,98 @@ public class Registration extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Background.setBackground(new java.awt.Color(210, 230, 255));
-        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         RigesterWindow.setBackground(new java.awt.Color(245, 235, 220));
         RigesterWindow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         RigesterWindow.setPreferredSize(new java.awt.Dimension(400, 300));
+        RigesterWindow.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         windowPane.setBackground(new java.awt.Color(110, 190, 180));
+        windowPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         windowPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        RigesterWindow.add(windowPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 30));
 
         Register.setFont(new java.awt.Font("Retro Gaming", 0, 18)); // NOI18N
         Register.setText("Register");
+        RigesterWindow.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
 
-        NameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 12)); // NOI18N
+        NameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
         NameRegister.setText("Name");
+        RigesterWindow.add(NameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
         nameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         nameRegField.addActionListener(this::nameRegFieldActionPerformed);
+        RigesterWindow.add(nameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 189, 30));
 
-        usernameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 12)); // NOI18N
+        usernameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
         usernameRegister.setText("Username");
+        RigesterWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
         usernameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usernameRegField.addActionListener(this::usernameRegFieldActionPerformed);
+        RigesterWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 189, 30));
 
-        PasswordReg.setFont(new java.awt.Font("Retro Gaming", 0, 12)); // NOI18N
+        PasswordReg.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
         PasswordReg.setText("Password");
+        RigesterWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
 
         jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
+        RigesterWindow.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 189, 30));
 
-        EmailReg.setFont(new java.awt.Font("Retro Gaming", 0, 12)); // NOI18N
+        EmailReg.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
         EmailReg.setText("E-mail");
+        RigesterWindow.add(EmailReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 50, 20));
 
         emailField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        RigesterWindow.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 190, 30));
 
         jButton1.setBackground(new java.awt.Color(150, 220, 150));
         jButton1.setFont(new java.awt.Font("Retro Gaming", 1, 10)); // NOI18N
         jButton1.setText("Register");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(this::jButton1ActionPerformed);
+        RigesterWindow.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 70, 30));
 
-        javax.swing.GroupLayout RigesterWindowLayout = new javax.swing.GroupLayout(RigesterWindow);
-        RigesterWindow.setLayout(RigesterWindowLayout);
-        RigesterWindowLayout.setHorizontalGroup(
-            RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(windowPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RigesterWindowLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(PasswordReg)
-                        .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(usernameRegister)
-                            .addComponent(NameRegister)))
-                    .addComponent(EmailReg))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RigesterWindowLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(Register))
-                    .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nameRegField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(usernameRegField, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RigesterWindowLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(141, 141, 141))
-        );
-        RigesterWindowLayout.setVerticalGroup(
-            RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(RigesterWindowLayout.createSequentialGroup()
-                .addComponent(windowPane, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Register, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameRegister)
-                    .addComponent(nameRegField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(usernameRegister)
-                    .addComponent(usernameRegField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PasswordReg, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(RigesterWindowLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EmailReg)
-                    .addComponent(emailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/envelope.png"))); // NOI18N
+        RigesterWindow.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 30));
 
-        Background.add(RigesterWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 360, 250));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/retro (1).png"))); // NOI18N
+        RigesterWindow.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/retro (1).png"))); // NOI18N
+        RigesterWindow.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, 30));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/key.png"))); // NOI18N
+        RigesterWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, 30));
+
+        getContentPane().add(RigesterWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 590, 360));
+
+        Background.setBackground(new java.awt.Color(210, 230, 255));
+        Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/instagram_ pinkx17 please follow me _).jpg"))); // NOI18N
-        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 270));
+        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -30, 720, 470));
 
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 270));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, 670, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void nameRegFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameRegFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_nameRegFieldActionPerformed
 
     private void usernameRegFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameRegFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameRegFieldActionPerformed
 
-    private void nameRegFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameRegFieldActionPerformed
+    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_nameRegFieldActionPerformed
+    }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,6 +183,10 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField nameRegField;
     private javax.swing.JTextField usernameRegField;
