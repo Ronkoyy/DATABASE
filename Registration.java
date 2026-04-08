@@ -32,6 +32,7 @@ public class Registration extends javax.swing.JFrame {
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         RigesterWindow = new javax.swing.JPanel();
         windowPane = new javax.swing.JPanel();
+        controlwin = new javax.swing.JButton();
         Register = new javax.swing.JLabel();
         NameRegister = new javax.swing.JLabel();
         nameRegField = new javax.swing.JTextField();
@@ -42,9 +43,10 @@ public class Registration extends javax.swing.JFrame {
         EmailReg = new javax.swing.JLabel();
         emailField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -62,13 +64,21 @@ public class Registration extends javax.swing.JFrame {
         windowPane.setBackground(new java.awt.Color(110, 190, 180));
         windowPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         windowPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        RigesterWindow.add(windowPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 30));
 
-        Register.setFont(new java.awt.Font("Retro Gaming", 0, 18)); // NOI18N
+        controlwin.setBackground(new java.awt.Color(110, 190, 180));
+        controlwin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        controlwin.setText("-           x");
+        controlwin.setBorder(null);
+        controlwin.addActionListener(this::controlwinActionPerformed);
+        windowPane.add(controlwin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 80, 20));
+
+        RigesterWindow.add(windowPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 40));
+
+        Register.setFont(new java.awt.Font("Retro Gaming", 0, 24)); // NOI18N
         Register.setText("Register");
-        RigesterWindow.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
+        RigesterWindow.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
 
-        NameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
+        NameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 18)); // NOI18N
         NameRegister.setText("Name");
         RigesterWindow.add(NameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
@@ -100,30 +110,39 @@ public class Registration extends javax.swing.JFrame {
         RigesterWindow.add(emailField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 190, 30));
 
         jButton1.setBackground(new java.awt.Color(150, 220, 150));
-        jButton1.setFont(new java.awt.Font("Retro Gaming", 1, 10)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Retro Gaming", 1, 18)); // NOI18N
         jButton1.setText("Register");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        RigesterWindow.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 70, 30));
+        RigesterWindow.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 120, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/envelope.png"))); // NOI18N
-        RigesterWindow.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, 30));
+        jButton2.setBackground(new java.awt.Color(245, 235, 220));
+        jButton2.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        jButton2.setText("Already have an account?");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(this::jButton2ActionPerformed);
+        RigesterWindow.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 150, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/retro (1).png"))); // NOI18N
-        RigesterWindow.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, 30));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/envelope (1).png"))); // NOI18N
+        RigesterWindow.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/retro (1).png"))); // NOI18N
-        RigesterWindow.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, 30));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/retro.png"))); // NOI18N
+        RigesterWindow.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/key.png"))); // NOI18N
-        RigesterWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, 30));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/retro.png"))); // NOI18N
+        RigesterWindow.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
 
-        getContentPane().add(RigesterWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 590, 360));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/key (1).png"))); // NOI18N
+        RigesterWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
+
+        getContentPane().add(RigesterWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 590, 370));
 
         Background.setBackground(new java.awt.Color(210, 230, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/instagram_ pinkx17 please follow me _).jpg"))); // NOI18N
         Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -30, 720, 470));
 
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, 670, 440));
@@ -144,8 +163,21 @@ public class Registration extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+
+    java.sql.Connection testConn = DBConnection.connectDB();
+
+if (testConn != null) {
+    javax.swing.JOptionPane.showMessageDialog(this, "CONNECTION SUCCESSFUL! The retro app is online.");
+}        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void controlwinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlwinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_controlwinActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,14 +211,16 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel PasswordReg;
     private javax.swing.JLabel Register;
     private javax.swing.JPanel RigesterWindow;
+    private javax.swing.JButton controlwin;
     private javax.swing.JTextField emailField;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField nameRegField;
     private javax.swing.JTextField usernameRegField;
