@@ -151,6 +151,8 @@ public class Registration extends javax.swing.JFrame {
 
         Background.setBackground(new java.awt.Color(210, 230, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg.jpg"))); // NOI18N
         Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -30, 720, 470));
 
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, 670, 440));
