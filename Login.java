@@ -28,8 +28,9 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        RigesterWindow = new javax.swing.JPanel();
+        LoginWindow = new javax.swing.JPanel();
         windowPane = new javax.swing.JPanel();
+        controlwin = new javax.swing.JButton();
         LOGIN = new javax.swing.JLabel();
         usernameRegister = new javax.swing.JLabel();
         usernameRegField = new javax.swing.JTextField();
@@ -38,56 +39,72 @@ public class Login extends javax.swing.JFrame {
         LoginBut = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         Background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        RigesterWindow.setBackground(new java.awt.Color(245, 235, 220));
-        RigesterWindow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        RigesterWindow.setPreferredSize(new java.awt.Dimension(400, 300));
-        RigesterWindow.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        LoginWindow.setBackground(new java.awt.Color(245, 235, 220));
+        LoginWindow.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        LoginWindow.setPreferredSize(new java.awt.Dimension(400, 300));
+        LoginWindow.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         windowPane.setBackground(new java.awt.Color(110, 190, 180));
         windowPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         windowPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        RigesterWindow.add(windowPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 30));
 
-        LOGIN.setFont(new java.awt.Font("Retro Gaming", 0, 18)); // NOI18N
+        controlwin.setBackground(new java.awt.Color(110, 190, 180));
+        controlwin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        controlwin.setText("-           x");
+        controlwin.setBorder(null);
+        controlwin.addActionListener(this::controlwinActionPerformed);
+        windowPane.add(controlwin, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 80, 20));
+
+        LoginWindow.add(windowPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 40));
+
+        LOGIN.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 1, 24)); // NOI18N
         LOGIN.setText("LOGIN");
-        RigesterWindow.add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, -1, -1));
+        LoginWindow.add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, -1, -1));
 
-        usernameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
+        usernameRegister.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 18)); // NOI18N
         usernameRegister.setText("Username");
-        RigesterWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+        LoginWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
 
         usernameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usernameRegField.addActionListener(this::usernameRegFieldActionPerformed);
-        RigesterWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 189, 30));
+        LoginWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 189, 40));
 
-        PasswordReg.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
+        PasswordReg.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 18)); // NOI18N
         PasswordReg.setText("Password");
-        RigesterWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+        LoginWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
         jPasswordField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
-        RigesterWindow.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 189, 30));
+        LoginWindow.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 189, 40));
 
         LoginBut.setBackground(new java.awt.Color(150, 220, 150));
-        LoginBut.setFont(new java.awt.Font("Retro Gaming", 1, 14)); // NOI18N
+        LoginBut.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 1, 24)); // NOI18N
         LoginBut.setText("LOGIN");
         LoginBut.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         LoginBut.addActionListener(this::LoginButActionPerformed);
-        RigesterWindow.add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 110, 30));
+        LoginWindow.add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 120, 40));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/retro (1).png"))); // NOI18N
-        RigesterWindow.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, 30));
+        LoginWindow.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/mycompany/databasemidtermreq/key.png"))); // NOI18N
-        RigesterWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, -1, 30));
+        LoginWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, 30));
 
-        getContentPane().add(RigesterWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 590, 360));
+        jButton1.setBackground(new java.awt.Color(245, 235, 220));
+        jButton1.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        jButton1.setText("Don't have an account?");
+        jButton1.setBorder(null);
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        LoginWindow.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 150, -1));
+
+        getContentPane().add(LoginWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 590, 370));
 
         Background.setBackground(new java.awt.Color(210, 230, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,6 +128,14 @@ public class Login extends javax.swing.JFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void controlwinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlwinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_controlwinActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,8 +166,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel Background;
     private javax.swing.JLabel LOGIN;
     private javax.swing.JButton LoginBut;
+    private javax.swing.JPanel LoginWindow;
     private javax.swing.JLabel PasswordReg;
-    private javax.swing.JPanel RigesterWindow;
+    private javax.swing.JButton controlwin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
