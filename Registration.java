@@ -40,11 +40,11 @@ public class Registration extends javax.swing.JFrame {
         EmailReg = new javax.swing.JLabel();
         emailRegF = new javax.swing.JTextField();
         RegisterBut = new javax.swing.JButton();
-        existingUser = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        existingUser = new javax.swing.JLabel();
         Background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -73,6 +73,11 @@ public class Registration extends javax.swing.JFrame {
 
         Register.setFont(new java.awt.Font("Retro Gaming", 0, 24)); // NOI18N
         Register.setText("Register");
+        Register.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegisterMouseClicked(evt);
+            }
+        });
         RigesterWindow.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
 
         NameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 18)); // NOI18N
@@ -117,13 +122,6 @@ public class Registration extends javax.swing.JFrame {
         RegisterBut.addActionListener(this::RegisterButActionPerformed);
         RigesterWindow.add(RegisterBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 120, 40));
 
-        existingUser.setBackground(new java.awt.Color(245, 235, 220));
-        existingUser.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
-        existingUser.setText("Already have an account?");
-        existingUser.setBorder(null);
-        existingUser.addActionListener(this::existingUserActionPerformed);
-        RigesterWindow.add(existingUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, 150, -1));
-
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/envelope (1).png"))); // NOI18N
         RigesterWindow.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
@@ -139,6 +137,15 @@ public class Registration extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/key (1).png"))); // NOI18N
         RigesterWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
+
+        existingUser.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        existingUser.setText("Already have an account?");
+        existingUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                existingUserMouseClicked(evt);
+            }
+        });
+        RigesterWindow.add(existingUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
 
         getContentPane().add(RigesterWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 590, 370));
 
@@ -212,11 +219,15 @@ try {
         // TODO add your handling code here:
     }//GEN-LAST:event_controlwinActionPerformed
 
-    private void existingUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_existingUserActionPerformed
-      Login LoginWindow = new Login();
-      LoginWindow.setVisible(true);
-      this.dispose();
-    }//GEN-LAST:event_existingUserActionPerformed
+    private void RegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegisterMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterMouseClicked
+
+    private void existingUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_existingUserMouseClicked
+        Login LoginWindow = new Login();
+        LoginWindow.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_existingUserMouseClicked
 
     /**
      * @param args the command line arguments
@@ -254,7 +265,7 @@ try {
     private javax.swing.JPanel RigesterWindow;
     private javax.swing.JButton controlwin;
     private javax.swing.JTextField emailRegF;
-    private javax.swing.JButton existingUser;
+    private javax.swing.JLabel existingUser;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
