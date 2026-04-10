@@ -175,46 +175,45 @@ public class Registration extends javax.swing.JFrame {
     private void RegisterButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButActionPerformed
 
 String name = nameRegField.getText();
-String user = usernameRegField.getText();
-String pass = String.valueOf(Passwordregf.getPassword());
-String email = emailRegF.getText();
+    String user = usernameRegField.getText();
+    String pass = String.valueOf(Passwordregf.getPassword());
+    String email = emailRegF.getText();
 
-
-if (name.isEmpty() || user.isEmpty() || pass.isEmpty() || email.isEmpty()) {
-    JOptionPane.showMessageDialog(this, "Please fill up all fields!", "Error", JOptionPane.ERROR_MESSAGE);
-    return;
-}
-
-try {
-    
-    java.sql.Connection conn = DBConnection.connectDB();
-    
-    
-    String sql = "INSERT INTO users (fullName, username, password, email) VALUES (?, ?, ?, ?)";
-    java.sql.PreparedStatement pst = conn.prepareStatement(sql);
-    
-    pst.setString(1, name);
-    pst.setString(2, user);
-    pst.setString(3, pass);
-    pst.setString(4, email);
-    
-   
-    int updatedRows = pst.executeUpdate();
-    if (updatedRows > 0) {
-        JOptionPane.showMessageDialog(this, "Registration Successful!");
-        
-     
-        new Login().setVisible(true);
-        this.dispose();
+    if (name.isEmpty() || user.isEmpty() || pass.isEmpty() || email.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill up all fields!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
     }
+
     
-    conn.close();
-    
-} catch (Exception e) {
-    JOptionPane.showMessageDialog(this, "Database Error: " + e.getMessage());
-}
-    java.sql.Connection testConn = DBConnection.connectDB();
-     // TODO add your handling code here:
+    try {
+        java.sql.Connection conn = DBConnection.connectDB();
+        
+        String sql = "INSERT INTO users (fullName, username, password, email) VALUES (?, ?, ?, ?)";
+        java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+        
+        pst.setString(1, name);
+        pst.setString(2, user);
+        pst.setString(3, pass);
+        pst.setString(4, email);
+        
+        int updatedRows = pst.executeUpdate();
+        
+        if (updatedRows > 0) {
+            JOptionPane.showMessageDialog(this, "Registration Successful!");
+            
+            
+            conn.close(); 
+            new Login().setVisible(true);
+            this.dispose();
+        } else {
+            conn.close(); 
+        }
+        
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Database Error: " + e.getMessage());
+    }
+
+
     }//GEN-LAST:event_RegisterButActionPerformed
 
     private void controlwinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlwinActionPerformed
