@@ -44,6 +44,8 @@ public class Login extends javax.swing.JFrame {
         LoginBut = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        forgotPass = new javax.swing.JLabel();
+        notExistingUser = new javax.swing.JLabel();
         Background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -74,34 +76,52 @@ public class Login extends javax.swing.JFrame {
 
         usernameRegister.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 18)); // NOI18N
         usernameRegister.setText("Username");
-        LoginWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+        LoginWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
         usernameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usernameRegField.addActionListener(this::usernameRegFieldActionPerformed);
-        LoginWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 189, 40));
+        LoginWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 189, 40));
 
         PasswordReg.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 18)); // NOI18N
         PasswordReg.setText("Password");
-        LoginWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
+        LoginWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, -1));
 
         PassLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PassLogin.addActionListener(this::PassLoginActionPerformed);
-        LoginWindow.add(PassLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 189, 40));
+        LoginWindow.add(PassLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 189, 40));
 
         LoginBut.setBackground(new java.awt.Color(150, 220, 150));
         LoginBut.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 1, 24)); // NOI18N
         LoginBut.setText("LOGIN");
         LoginBut.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         LoginBut.addActionListener(this::LoginButActionPerformed);
-        LoginWindow.add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 120, 40));
+        LoginWindow.add(LoginBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, 120, 40));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/key (1).png"))); // NOI18N
-        LoginWindow.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, -1, -1));
+        LoginWindow.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, -1, -1));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/retro.png"))); // NOI18N
-        LoginWindow.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
+        LoginWindow.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
+
+        forgotPass.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
+        forgotPass.setText("Forgot Password?");
+        forgotPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                forgotPassMouseClicked(evt);
+            }
+        });
+        LoginWindow.add(forgotPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, -1));
+
+        notExistingUser.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
+        notExistingUser.setText("Don't have an account?");
+        notExistingUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                notExistingUserMouseClicked(evt);
+            }
+        });
+        LoginWindow.add(notExistingUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
         getContentPane().add(LoginWindow, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 590, 370));
 
@@ -169,6 +189,56 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_controlwinActionPerformed
 
+    private void forgotPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotPassMouseClicked
+     
+String user = JOptionPane.showInputDialog(this, 
+    "Enter Username To Verify:", 
+    "Mainframe Security", 
+    JOptionPane.QUESTION_MESSAGE);
+
+
+if (user == null || user.trim().isEmpty()) return;
+
+
+String newPass = JOptionPane.showInputDialog(this, 
+    "Enter NEW Password for account [" + user + "]:", 
+    "Update Record", 
+    JOptionPane.WARNING_MESSAGE);
+
+if (newPass == null || newPass.trim().isEmpty()) return;
+
+try {
+    java.sql.Connection conn = DBConnection.connectDB();
+    
+    // 3. The SQL UPDATE (The 'U' in CRUD)
+    String sql = "UPDATE users SET password = ? WHERE username = ?";
+    java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+    
+    pst.setString(1, newPass);
+    pst.setString(2, user);
+    
+    int success = pst.executeUpdate();
+    
+    if (success > 0) {
+        JOptionPane.showMessageDialog(this, "Password Updated! You can now log in with your new password.");
+    } else {
+        JOptionPane.showMessageDialog(this, "Username not found.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    conn.close();
+} catch (Exception e) {
+    JOptionPane.showMessageDialog(this, "Database Error: " + e.getMessage());
+}
+        
+       
+    }//GEN-LAST:event_forgotPassMouseClicked
+
+    private void notExistingUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notExistingUserMouseClicked
+        Registration Registration = new Registration();
+       Registration.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_notExistingUserMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -202,9 +272,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField PassLogin;
     private javax.swing.JLabel PasswordReg;
     private javax.swing.JButton controlwin;
+    private javax.swing.JLabel forgotPass;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel notExistingUser;
     private javax.swing.JTextField usernameRegField;
     private javax.swing.JLabel usernameRegister;
     private javax.swing.JPanel windowPane;
