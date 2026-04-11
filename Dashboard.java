@@ -12,13 +12,19 @@ public class Dashboard extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Dashboard.class.getName());
 
-    /**
-     * Creates new form Dashboard
-     */
-    public Dashboard() {
+  String currentUsername;
+
+    public Dashboard(String username) {
         initComponents();
+        this.currentUsername = username; 
+        this.setLocationRelativeTo(null); 
     }
 
+    
+    public Dashboard() {
+        initComponents();
+        this.setLocationRelativeTo(null);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,6 +46,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         DashboardWin.setBackground(new java.awt.Color(245, 235, 220));
         DashboardWin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -73,6 +80,7 @@ public class Dashboard extends javax.swing.JFrame {
         logoutButt.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 18)); // NOI18N
         logoutButt.setText("LOGOUT");
         logoutButt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        logoutButt.addActionListener(this::logoutButtActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -113,42 +121,15 @@ public class Dashboard extends javax.swing.JFrame {
 
         DashboardWin.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 460, 320));
 
+        getContentPane().add(DashboardWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 33, 589, 377));
+
         Background.setBackground(new java.awt.Color(210, 230, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg.jpg"))); // NOI18N
         Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -30, 720, 470));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(54, 54, 54)
-                    .addComponent(DashboardWin, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(33, 33, 33)
-                    .addComponent(DashboardWin, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(Background, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -156,6 +137,16 @@ public class Dashboard extends javax.swing.JFrame {
     private void controlwinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_controlwinActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_controlwinActionPerformed
+
+    private void logoutButtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutButtActionPerformed
+       
+    new LogOut(currentUsername).setVisible(true);
+
+
+    this.dispose();
+
+    this.dispose();
+    }//GEN-LAST:event_logoutButtActionPerformed
 
     /**
      * @param args the command line arguments
