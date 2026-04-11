@@ -12,6 +12,6 @@ import javax.swing.*;
 public class DatabaseMidtermReq {
 
     public static void main(String[] args) {
-        
+        java.awt.EventQueue.invokeLater(() -> new Registration().setVisible(true));
     }
 }
