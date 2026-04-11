@@ -78,6 +78,7 @@ public class Login extends javax.swing.JFrame {
         usernameRegister.setText("Username");
         LoginWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
 
+        usernameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         usernameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usernameRegField.addActionListener(this::usernameRegFieldActionPerformed);
         LoginWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 189, 40));
@@ -86,6 +87,7 @@ public class Login extends javax.swing.JFrame {
         PasswordReg.setText("Password");
         LoginWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, -1));
 
+        PassLogin.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         PassLogin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PassLogin.addActionListener(this::PassLoginActionPerformed);
         LoginWindow.add(PassLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 189, 40));
