@@ -164,7 +164,7 @@ public class Login extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Login Successful! Welcome, " + name);
         
         // 4. Transition to Dashboard
-        new Dashboard().setVisible(true);
+       new Dashboard(usernameRegField.getText()).setVisible(true);
         this.dispose(); // Close the login window
         
     } else {
@@ -210,7 +210,7 @@ if (newPass == null || newPass.trim().isEmpty()) return;
 try {
     java.sql.Connection conn = DBConnection.connectDB();
     
-    // 3. The SQL UPDATE (The 'U' in CRUD)
+   
     String sql = "UPDATE users SET password = ? WHERE username = ?";
     java.sql.PreparedStatement pst = conn.prepareStatement(sql);
     
