@@ -84,7 +84,7 @@ public class Registration extends javax.swing.JFrame {
         NameRegister.setText("Name");
         RigesterWindow.add(NameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
-        nameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        nameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         nameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         nameRegField.addActionListener(this::nameRegFieldActionPerformed);
         RigesterWindow.add(nameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 189, 30));
@@ -93,7 +93,7 @@ public class Registration extends javax.swing.JFrame {
         usernameRegister.setText("Username");
         RigesterWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
 
-        usernameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        usernameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         usernameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usernameRegField.addActionListener(this::usernameRegFieldActionPerformed);
         RigesterWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 189, 30));
@@ -102,7 +102,7 @@ public class Registration extends javax.swing.JFrame {
         PasswordReg.setText("Password");
         RigesterWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
 
-        Passwordregf.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        Passwordregf.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         Passwordregf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Passwordregf.addActionListener(this::PasswordregfActionPerformed);
         RigesterWindow.add(Passwordregf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 189, 30));
@@ -111,7 +111,7 @@ public class Registration extends javax.swing.JFrame {
         EmailReg.setText("E-mail");
         RigesterWindow.add(EmailReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 50, 20));
 
-        emailRegF.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        emailRegF.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         emailRegF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         RigesterWindow.add(emailRegF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 190, 30));
 
