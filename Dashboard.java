@@ -17,6 +17,7 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard(String username) {
         initComponents();
         this.currentUsername = username; 
+        currentUser.setText("Hello, " + currentUsername);
         this.setLocationRelativeTo(null); 
     }
 
@@ -41,8 +42,8 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         logoutButt = new javax.swing.JButton();
+        currentUser = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         Background = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -74,44 +75,29 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(210, 210, 210));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pep big.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         logoutButt.setBackground(new java.awt.Color(210, 210, 210));
         logoutButt.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 18)); // NOI18N
         logoutButt.setText("LOGOUT");
         logoutButt.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         logoutButt.addActionListener(this::logoutButtActionPerformed);
+        jPanel1.add(logoutButt, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 297, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(logoutButt)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
-                .addComponent(logoutButt)
-                .addGap(18, 18, 18))
-        );
+        currentUser.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
+        currentUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        currentUser.setText("jLabel6");
+        currentUser.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        jPanel1.add(currentUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         DashboardWin.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 110, 340));
 
         jPanel2.setBackground(new java.awt.Color(245, 235, 220));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-
-        jLabel4.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 18)); // NOI18N
-        jLabel4.setText("Hello!");
 
         jLabel5.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 18)); // NOI18N
         jLabel5.setText("Welcome to your dashboard.");
@@ -121,20 +107,16 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addContainerGap(281, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(jLabel5)
+                .addContainerGap(277, Short.MAX_VALUE))
         );
 
         DashboardWin.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 460, 320));
@@ -195,10 +177,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel Background;
     private javax.swing.JPanel DashboardWin;
     private javax.swing.JButton controlwin;
+    private javax.swing.JLabel currentUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
