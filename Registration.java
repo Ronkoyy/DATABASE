@@ -37,10 +37,7 @@ public class Registration extends javax.swing.JFrame {
         usernameRegField = new javax.swing.JTextField();
         PasswordReg = new javax.swing.JLabel();
         Passwordregf = new javax.swing.JPasswordField();
-        EmailReg = new javax.swing.JLabel();
-        emailRegF = new javax.swing.JTextField();
         RegisterBut = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -71,49 +68,41 @@ public class Registration extends javax.swing.JFrame {
 
         RigesterWindow.add(windowPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 40));
 
-        Register.setFont(new java.awt.Font("Retro Gaming", 0, 24)); // NOI18N
+        Register.setFont(new java.awt.Font("Press Start 2P", 0, 22)); // NOI18N
         Register.setText("Register");
         Register.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 RegisterMouseClicked(evt);
             }
         });
-        RigesterWindow.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
+        RigesterWindow.add(Register, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, -1, 30));
 
         NameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 18)); // NOI18N
         NameRegister.setText("Name");
-        RigesterWindow.add(NameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
+        RigesterWindow.add(NameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, -1));
 
         nameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         nameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         nameRegField.addActionListener(this::nameRegFieldActionPerformed);
-        RigesterWindow.add(nameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 189, 30));
+        RigesterWindow.add(nameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 120, 189, 30));
 
         usernameRegister.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
         usernameRegister.setText("Username");
-        RigesterWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
+        RigesterWindow.add(usernameRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, -1, -1));
 
         usernameRegField.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         usernameRegField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         usernameRegField.addActionListener(this::usernameRegFieldActionPerformed);
-        RigesterWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 189, 30));
+        RigesterWindow.add(usernameRegField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 189, 30));
 
         PasswordReg.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
         PasswordReg.setText("Password");
-        RigesterWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+        RigesterWindow.add(PasswordReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
 
         Passwordregf.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
         Passwordregf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Passwordregf.addActionListener(this::PasswordregfActionPerformed);
-        RigesterWindow.add(Passwordregf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 180, 189, 30));
-
-        EmailReg.setFont(new java.awt.Font("Retro Gaming", 0, 14)); // NOI18N
-        EmailReg.setText("E-mail");
-        RigesterWindow.add(EmailReg, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 50, 20));
-
-        emailRegF.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 14)); // NOI18N
-        emailRegF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        RigesterWindow.add(emailRegF, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, 190, 30));
+        RigesterWindow.add(Passwordregf, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 189, 30));
 
         RegisterBut.setBackground(new java.awt.Color(150, 220, 150));
         RegisterBut.setFont(new java.awt.Font("Retro Gaming", 1, 18)); // NOI18N
@@ -122,21 +111,17 @@ public class Registration extends javax.swing.JFrame {
         RegisterBut.addActionListener(this::RegisterButActionPerformed);
         RigesterWindow.add(RegisterBut, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 120, 40));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/envelope (1).png"))); // NOI18N
-        RigesterWindow.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, -1, -1));
-
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/retro.png"))); // NOI18N
-        RigesterWindow.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, -1));
+        RigesterWindow.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/retro.png"))); // NOI18N
-        RigesterWindow.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+        RigesterWindow.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, -1, -1));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/key (1).png"))); // NOI18N
-        RigesterWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, -1, -1));
+        RigesterWindow.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, -1, -1));
 
         existingUser.setFont(new java.awt.Font("Fixedsys Excelsior 3.01", 0, 12)); // NOI18N
         existingUser.setText("Already have an account?");
@@ -152,8 +137,8 @@ public class Registration extends javax.swing.JFrame {
         Background.setBackground(new java.awt.Color(210, 230, 255));
         Background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg.jpg"))); // NOI18N
-        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, -30, 720, 470));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
+        Background.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 630, 420));
 
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, 670, 440));
 
@@ -177,9 +162,9 @@ public class Registration extends javax.swing.JFrame {
 String name = nameRegField.getText();
     String user = usernameRegField.getText();
     String pass = String.valueOf(Passwordregf.getPassword());
-    String email = emailRegF.getText();
+    
 
-    if (name.isEmpty() || user.isEmpty() || pass.isEmpty() || email.isEmpty()) {
+    if (name.isEmpty() || user.isEmpty() || pass.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Please fill up all fields!", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
@@ -188,13 +173,13 @@ String name = nameRegField.getText();
     try {
         java.sql.Connection conn = DBConnection.connectDB();
         
-        String sql = "INSERT INTO users (fullName, username, password, email) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO users (fullName, username, password) VALUES (?, ?, ?)";
         java.sql.PreparedStatement pst = conn.prepareStatement(sql);
         
         pst.setString(1, name);
         pst.setString(2, user);
         pst.setString(3, pass);
-        pst.setString(4, email);
+        
         
         int updatedRows = pst.executeUpdate();
         
@@ -257,7 +242,6 @@ String name = nameRegField.getText();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Background;
-    private javax.swing.JLabel EmailReg;
     private javax.swing.JLabel NameRegister;
     private javax.swing.JLabel PasswordReg;
     private javax.swing.JPasswordField Passwordregf;
@@ -265,11 +249,9 @@ String name = nameRegField.getText();
     private javax.swing.JButton RegisterBut;
     private javax.swing.JPanel RigesterWindow;
     private javax.swing.JButton controlwin;
-    private javax.swing.JTextField emailRegF;
     private javax.swing.JLabel existingUser;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
